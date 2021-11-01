@@ -7,40 +7,40 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
 
+@Entity
+@Table(name = "binance_account")
 @Getter
 @Setter
 @ToString
 @RequiredArgsConstructor
-@Entity
-@Table(name = "erc20")
-public class ERC20 implements Serializable {
+public class BinanceAccount implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-
-    @Column(name = "ticker")
-    private String ticker;
-
-    @Column(name = "roi")
-    private String roi;
 
     @Column(name = "users_id")
     private long usersId;
 
-    @Column(name = "quantity")
-    private double quantity;
+    @Column(name = "public_key")
+    private String public_key;
 
-    @Column(name = "marketprice")
-    private double marketprice;
+    @Column(name = "secret")
+    private String secret;
+
+    @Column(name = "binance_email")
+    private String binance_email;
+
+    @Column(name = "balance")
+    private double balance;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        ERC20 erc20 = (ERC20) o;
-        return Objects.equals(id, erc20.id);
+        BinanceAccount that = (BinanceAccount) o;
+        return Objects.equals(id, that.id);
     }
 
     @Override

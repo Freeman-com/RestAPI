@@ -1,4 +1,4 @@
-package com.model.entity.BitMax;
+package com.model;
 
 import lombok.Data;
 
