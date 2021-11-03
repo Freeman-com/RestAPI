@@ -12,10 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 /**
- * JWT token filter that handles all HTTP requests to application (to server).
- * Фильтр токенов JWT, который обрабатывает все HTTP-запросы к приложению (к серверу).
+ * JWT token filter that handles all HTTP requests to application.
  *
- * @author ANTON KOZINAU
+ * @author anton kozinau
  * @version 1.0
  */
 

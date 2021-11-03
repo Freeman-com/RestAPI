@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * Util class that provides methods for generation, validation, etc. of JWT token.
  *
- * @author ANTON KOZINAU
+ * @author anton kozinau
  * @version 1.0
  */
 
@@ -39,16 +39,14 @@ public class JwtTokenProvider {
     @Value("${jwt.token.expired}")
     private long validityInMilliseconds;
 
-    private final UserDetailsService userDetailsService;
 
     @Autowired
-    public JwtTokenProvider(UserDetailsService userDetailsService) {
-        this.userDetailsService = userDetailsService;
-    }
+    private UserDetailsService userDetailsService;
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
+        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+        return bCryptPasswordEncoder;
     }
 
     @PostConstruct
@@ -58,7 +56,6 @@ public class JwtTokenProvider {
 
     public String createToken(String username, List<Role> roles) {
 
-        /* Claims - требования */
         Claims claims = Jwts.claims().setSubject(username);
         claims.put("roles", getRoleNames(roles));
 
@@ -84,14 +81,13 @@ public class JwtTokenProvider {
 
     public String resolveToken(HttpServletRequest req) {
         String bearerToken = req.getHeader("Authorization");
-        if (bearerToken != null && bearerToken.startsWith("Bearer_")) {
-            return bearerToken.substring(7, bearerToken.length());
+        if (bearerToken != null) {
+            return bearerToken;
         }
         return null;
     }
 
     public boolean validateToken(String token) {
-
         try {
             Jws<Claims> claims = Jwts.parser().setSigningKey(secret).parseClaimsJws(token);
 

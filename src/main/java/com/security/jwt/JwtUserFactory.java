@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 /**
  * Implementation of Factory Method for class {@link JwtUser}.
  *
- * @author ANTON KOZINAU
+ * @author anton kozinau
  * @version 1.0
  */
 
@@ -28,13 +28,12 @@ public final class JwtUserFactory {
                 user.getUsername(),
                 user.getEmail(),
                 user.getPassword(),
-                mapToGrantedAuthorities(new ArrayList<>(user.getRoles())), /*для чего?*/
+                mapToGrantedAuthorities(new ArrayList<>(user.getRoles())),
                 user.getStatus().equals(Status.ACTIVE),
                 user.getUpdated()
         );
     }
 
-    /*cut&paste*/
     private static List<GrantedAuthority> mapToGrantedAuthorities(List<Role> userRoles) {
         return userRoles.stream()
                 .map(role ->
