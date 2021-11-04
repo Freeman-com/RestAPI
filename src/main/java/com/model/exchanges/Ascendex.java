@@ -1,4 +1,4 @@
-package com.model;
+package com.model.exchanges;
 
 import lombok.Data;
 
@@ -7,31 +7,31 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "bitmaxaccount")
+@Table(name = "ascendex")
 @Data
-public class BitMaxAccount implements Serializable {
-
-    @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+public class Ascendex extends BaseEntityExchange {
 
     @Column(name = "apikey")
     private String apikey;
+
     @Column(name = "secret")
     private String secret;
 
-    @Column(name = "bitmaxemail")
-    private String email;
+    @Column(name = "ascendexemail")
+    private String ascendexemail;
 
     @Column(name = "password")
     private String password;
+
     @Column(name = "exptime")
     private Integer exptime;
+
     @Column(name = "marketvalue")
     private BigDecimal marketvalue;
+
     @Column(name = "netcost")
     private BigDecimal netcost;
+
     @Column(name = "alltimeprofit")
     private BigDecimal alltimeprofit;
 

@@ -1,4 +1,4 @@
-package com.rest;
+package com.restResponse;
 
 import com.dto.AuthenticationRequestDto;
 import com.model.User;

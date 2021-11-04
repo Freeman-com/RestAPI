@@ -1,4 +1,4 @@
-package com.model;
+package com.model.exchanges;
 
 import lombok.*;
 import org.hibernate.Hibernate;

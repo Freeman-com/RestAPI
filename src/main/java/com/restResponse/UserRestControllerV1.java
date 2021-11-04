@@ -1,6 +1,6 @@
-package com.rest;
+package com.restResponse;
 
-import com.dto.AdminUserDto;
+import com.dto.UserDto;
 import com.model.User;
 import com.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,32 +12,32 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * REST controller for ROLE_ADMIN requests.
+ * REST controller user connected requests.
  *
- * @author ANTON KOZINAU
+ * @author anton kozinau
  * @version 1.0
  */
 
 @RestController
-@RequestMapping(value = "/api/v1/admin/")
-public class AdminRestControllerV1 {
+@RequestMapping(value = "/api/v1/")
+public class UserRestControllerV1 {
 
     private final UserService userService;
 
     @Autowired
-    public AdminRestControllerV1(UserService userService) {
+    public UserRestControllerV1(UserService userService) {
         this.userService = userService;
     }
 
-    @GetMapping(value = "users/{id}")
-    public ResponseEntity<AdminUserDto> getUserById(@PathVariable(name = "id") Long id) {
+    @GetMapping(value = "{id}")
+    public ResponseEntity<UserDto> getUserById(@PathVariable(name = "id") Long id){
         User user = userService.findById(id);
 
-        if (user == null) {
+        if(user == null){
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
 
-        AdminUserDto result = AdminUserDto.fromUser(user);
+        UserDto result = UserDto.fromUser(user);
 
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
