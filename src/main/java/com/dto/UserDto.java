@@ -1,8 +1,11 @@
 package com.dto;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.model.User;
+import com.model.exchanges.Ascendex;
 import lombok.Data;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * DTO class for user requests by ROLE_USER
@@ -14,11 +17,12 @@ import lombok.Data;
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UserDto {
+
     private Long id;
     private String username;
     private String email;
 
-    public User toUser(){
+    public User toUser() {
         User user = new User();
         user.setId(id);
         user.setUsername(username);
@@ -33,6 +37,11 @@ public class UserDto {
         userDto.setUsername(user.getUsername());
         userDto.setEmail(user.getEmail());
 
+
         return userDto;
+    }
+
+    public  static UserDto callToAscendexDB () {
+        return null;
     }
 }
