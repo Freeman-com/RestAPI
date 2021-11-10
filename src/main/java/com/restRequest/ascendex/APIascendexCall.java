@@ -1,6 +1,11 @@
 package com.restRequest.ascendex;
 
 import com.google.gson.Gson;
+import com.model.User;
+import com.repository.AscendexRepository;
+import com.service.UserService;
+import org.springframework.security.core.context.SecurityContextHolder;
+
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.net.http.HttpClient;
@@ -11,19 +16,24 @@ import java.time.Duration;
 
 public class APIascendexCall {
 
-    private static final String secret = "XehrRcD5WbaAcz2QHSC8v4vfvaLJLVkwyGLRiHMArXpWwQo9FjXKg3A5fzhgyHGK";
-    private static final String apiKey = "yHcVzT7GWPmPGrrHzAN74MDReYquiTe5";
+    private AscendexRepository secret;
+    private AscendexRepository apiKey;
+    private UserService userService;
 
     /* Prehash String: <timestamp>+balance */
     long timesamp = System.currentTimeMillis();
     String path = "balance";
     String msg = timesamp + "+" + path;
 
+    public APIascendexCall(UserService userService) {
+        this.userService = userService;
+    }
+
+
     /*static <T> void fromArrayToCollection(T[] a, Collection<T> c)*/
-    public static <T> T doGet(String methodName, Class class1) throws IOException, InterruptedException {
+    public static <T> T doGet(String path, Class class1) throws IOException, InterruptedException {
 
         long timesamp = System.currentTimeMillis();
-        String path = methodName;
         String msg = timesamp + path;
 
         String result = EncoderAscendex.encode(msg, secret);
@@ -33,7 +43,7 @@ public class APIascendexCall {
                 .build();
 
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://ascendex.com/0/api/pro/v1/cash/" + methodName))
+                .uri(URI.create("https://ascendex.com/0/api/pro/v1/cash/" + path))
 
                 .timeout(Duration.ofMinutes(1))
                 .header("Accept", "application/json")

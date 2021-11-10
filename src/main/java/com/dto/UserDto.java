@@ -1,11 +1,7 @@
 package com.dto;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.model.User;
-import com.model.exchanges.Ascendex;
 import lombok.Data;
-
-import java.util.List;
-import java.util.Map;
 
 /**
  * DTO class for user requests by ROLE_USER

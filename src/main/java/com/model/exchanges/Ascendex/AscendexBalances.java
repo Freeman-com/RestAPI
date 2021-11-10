@@ -1,5 +1,6 @@
-package com.model.exchanges;
+package com.model.exchanges.Ascendex;
 
+import com.model.exchanges.BaseEntityExchange;
 import lombok.Data;
 
 import javax.persistence.Column;
@@ -9,7 +10,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "ascendex_db")
 @Data
-public class AscendexBalances extends BaseEntityExchange{
+public class AscendexBalances extends BaseEntityExchange {
 
     @Column(name = "email_ascendex")
     private String email;

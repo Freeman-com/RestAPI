@@ -1,5 +1,6 @@
-package com.model.exchanges;
+package com.model.exchanges.Ascendex;
 
+import com.model.exchanges.BaseEntityExchange;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -17,17 +18,8 @@ public class Ascendex extends BaseEntityExchange {
     @Column(name = "secret")
     private String secret;
 
-    @Column(name = "ascendexemail")
-    private String ascendexemail;
-
-    @Column(name = "password")
-    private String password;
-
     @Column(name = "exptime")
     private Integer exptime;
-
-    @Column(name = "marketvalue")
-    private BigDecimal marketvalue;
 
     @Column(name = "netcost")
     private BigDecimal netcost;
@@ -36,6 +28,6 @@ public class Ascendex extends BaseEntityExchange {
     private BigDecimal alltimeprofit;
 
     @Column(name = "email_id")
-    private long usersId;
+    private long emailId;
 
 }

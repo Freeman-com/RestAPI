@@ -1,4 +1,4 @@
-package com.model.exchanges;
+package com.model.exchanges.Binance;
 
 import lombok.*;
 import org.hibernate.Hibernate;
@@ -13,7 +13,7 @@ import java.util.Objects;
 @Setter
 @ToString
 @RequiredArgsConstructor
-public class BinanceAccount implements Serializable {
+public class Binance implements Serializable {
 
     @Id
     @Column(name = "id")
@@ -39,7 +39,7 @@ public class BinanceAccount implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        BinanceAccount that = (BinanceAccount) o;
+        Binance that = (Binance) o;
         return Objects.equals(id, that.id);
     }
 
