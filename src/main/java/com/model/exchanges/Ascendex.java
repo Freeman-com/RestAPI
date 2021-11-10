@@ -35,7 +35,7 @@ public class Ascendex extends BaseEntityExchange {
     @Column(name = "alltimeprofit")
     private BigDecimal alltimeprofit;
 
-    @Column(name = "users_id")
+    @Column(name = "email_id")
     private long usersId;
 
 }
