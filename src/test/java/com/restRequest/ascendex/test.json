@@ -1,0 +1,39 @@
+{
+  "code": 0,
+  "data": [
+    {
+      "email": "5244934@gmail.com",
+      "asset": "USDT",
+      "totalBalance": "0.000017326",
+      "availableBalance": "0.000017326"
+    },
+    {
+      "email": "freeman.anthony@gmail.com",
+      "asset": "USDT",
+      "totalBalance": "0.421447604",
+      "availableBalance": "0.421447604"
+    },
+    {
+      "email": "5244934@gmail.com",
+      "asset": "BTC",
+      "totalBalance": "0.000000089",
+      "availableBalance": "0.000000089"
+    },
+    {
+      "email": "freeman.anthony@gmail.com",
+      "asset": "BTC",
+      "totalBalance": "3.472710079",
+      "availableBalance": "0.472710079"
+    },
+    {
+      "asset": "USDP",
+      "totalBalance": "0.000013275",
+      "availableBalance": "0.000013275"
+    },
+    {
+      "asset": "ETH",
+      "totalBalance": "0.000000005",
+      "availableBalance": "0.000000005"
+    }
+  ]
+}

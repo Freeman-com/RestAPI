@@ -16,8 +16,8 @@ import java.time.Duration;
 
 public class APIascendexCall {
 
-    private AscendexRepository secret;
-    private AscendexRepository apiKey;
+    final static String secret = "XehrRcD5WbaAcz2QHSC8v4vfvaLJLVkwyGLRiHMArXpWwQo9FjXKg3A5fzhgyHGK";
+    final static String apiKey = "yHcVzT7GWPmPGrrHzAN74MDReYquiTe5";
     private UserService userService;
 
     /* Prehash String: <timestamp>+balance */

@@ -1,0 +1,31 @@
+{
+  "data": [
+    {
+      "exchanges": "all",
+      "emails": "12",
+      "asset": "USD",
+      "Balance": "5500.456",
+      "availableBalance": "5500.456"
+    },
+    {
+      "exchange": "ascendex",
+      "email1": "5244934@gmail.com",
+      "email2": "freeman.anthony@gmail.com",
+      "asset": "USDT",
+      "totalBalance1": "0.000017326",
+      "totalBalance2": "0.421447604",
+      "resultBalance": "0.42146493",
+      "availableBalance": "0.42146493"
+    },
+    {
+      "exchange": "binance",
+      "email1": "5244934@gmail.com",
+      "email2": "freeman.anthony@gmail.com",
+      "asset": "USDT",
+      "totalBalance1": "0.000017326",
+      "totalBalance2": "0.421447604",
+      "resultBalance": "0.42146493",
+      "availableBalance": "0.42146493"
+    }
+  ]
+}
